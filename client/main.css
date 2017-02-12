@@ -9,3 +9,7 @@
 .img-size {
   height: 600px;
 }
+
+.larger-card-content {
+  max-height: 50% !important;
+}
