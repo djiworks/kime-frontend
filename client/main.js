@@ -6,9 +6,12 @@ import '../imports/startup/accounts-config.js';
 
 Template.intro.onRendered(function () {
   this.$('.parallax').parallax();
+  this.$('.scrollspy').scrollSpy();
 });
 
 
 Template.menu.onRendered(function () {
-  this.$(".button-collapse").sideNav();
+  this.$(".button-collapse").sideNav({
+    closeOnClick: true
+  });
 });
