@@ -1,0 +1,35 @@
+<template name="userRegister">
+  <!-- Modal Structure -->
+  <div id="userRegister" class="modal">
+    <div class="modal-content">
+      <div class="container">
+        <h4 class="center thin cyan-text darken-1">Inscription</h4>
+        <div class="row">
+          <div class="input-field s12 m4 l8">
+            <input id="usernameRegister" type="text" class="validate">
+            <label for="usernameRegister">Nom d'utilisateur</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field s12 m4 l8">
+            <input id="passwordRegister" type="password" class="validate">
+            <label for="passwordRegister">Mot de passe</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field s12 m4 l8">
+            <input id="passwordConfirmation" type="password" class="validate">
+            <label for="passwordConfirmation">Confirmation</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6 offset-s6">
+            <button class="btn waves-effect waves-light right" type="submit" name="action">
+              S'enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

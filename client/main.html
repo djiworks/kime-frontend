@@ -11,6 +11,7 @@
 
 <body>
   {{> menu}}
+  {{> userLogin}}
   {{> intro}}
   {{> footer}}
 </body>
@@ -24,14 +25,15 @@
           <li><a href="#home">Accueil</a></li>
           <li><a href="#features">Fonctionnalités</a></li>
           <li><a href="#project">Contribuer</a></li>
-          <li><a class="waves-effect waves-light btn">Login</a></li>
+          <li><a class="waves-effect waves-light btn" href="#userLogin">Login</a></li>
+
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars fa-2x"></i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="#home">Accueil</a></li>
           <li><a href="#features">Fonctionnalités</a></li>
           <li><a href="#project">Contribuer</a></li>
-          <li><a class="waves-effect waves-light btn">Login</a></li>
+          <li><a class="waves-effect waves-light btn" href="#userLogin">Connexion</a></li>
         </ul>
       </div>
     </nav>
@@ -61,12 +63,13 @@
           </div>
         </div>
         <div class="row center">
-          <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Inscrivez-vous</a>
+          <a href="#userRegister" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Inscrivez-vous</a>
         </div>
         <br><br>
       </div>
     <div class="parallax"><img src="/images/header-bg.jpg" class="img-size"></div>
   </div>
+  {{> userRegister}}
 
   <div id="features" class="container scrollspy">
     <div class="section">
@@ -132,12 +135,7 @@
             <p>Soutenez financièrement le projet afin de développer de nouvelles fonctionnalités</p>
           </div>
           <div class="card-action">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="N2ZJ8FW8ZWMZL">
-              <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-              <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-            </form>
+            
           </div>
         </div>
       </div>
@@ -189,8 +187,8 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Informations légales</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Conditions générales d'utilisation</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Mentions légales</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Conditions générales d'utilisation</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Mentions légales</a></li>
           </ul>
         </div>
       </div>
