@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  {{>cguInfo}}
   {{> menu}}
   {{> userLogin}}
   {{> intro}}
@@ -135,7 +136,12 @@
             <p>Soutenez financièrement le projet afin de développer de nouvelles fonctionnalités</p>
           </div>
           <div class="card-action">
-            
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="N2ZJ8FW8ZWMZL">
+              <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+              <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+            </form>
           </div>
         </div>
       </div>
@@ -187,8 +193,8 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Informations légales</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#">Conditions générales d'utilisation</a></li>
-            <li><a class="grey-text text-lighten-3" href="#">Mentions légales</a></li>
+            <li><a class="grey-text text-lighten-3" href="#cguInfo">Conditions générales d'utilisation</a></li>
+            <li><a class="grey-text text-lighten-3" href="#legalInfo">Mentions légales</a></li>
           </ul>
         </div>
       </div>
@@ -198,5 +204,6 @@
       © 2017 Copyright <a href="http://djiworks.github.io" title="DjiWorks website" class="white-text" rel="nofollow">DjiWorks By Djothi Grondin</a>
       </div>
     </div>
+    {{>legalInfo}}
   </footer>
 </template>
