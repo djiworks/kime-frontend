@@ -4,8 +4,10 @@ Template.userRegister.onRendered(function () {
 
 Template.userRegister.events({
   'submit form': function(event) {
-    var self = Template.instance()
     event.preventDefault();
+    var self = Template.instance()
+    event.target.register.disabled = true;
+    event.target.register.classList.add('disabled');
     if (event.target.passwordRegister.value !== event.target.passwordConfirmation.value) {
       return event.target.passwordConfirmation.setCustomValidity('Mot de passe différent')
     }
@@ -15,6 +17,8 @@ Template.userRegister.events({
         username: username,
         password: passwordVar
     }, function(err) {
+      event.target.register.disabled = false;
+      event.target.register.classList.remove('disabled');
       if (err) {
         console.error(err);
         if (err.error === 403){

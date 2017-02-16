@@ -11,13 +11,17 @@
 
 <body>
   {{>cguInfo}}
-  {{> menu}}
-  {{> userLogin}}
-  {{> intro}}
+  {{#if currentUser}}
+    {{> menuUser}}
+  {{else}}
+    {{> menuGlobal}}
+    {{> userLogin}}
+    {{> intro}}
+  {{/if}}
   {{> footer}}
 </body>
 
-<template name="menu">
+<template name="menuGlobal">
   <div class="navbar">
     <nav>
       <div class="nav-wrapper cyan darken-1">
@@ -136,12 +140,7 @@
             <p>Soutenez financièrement le projet afin de développer de nouvelles fonctionnalités</p>
           </div>
           <div class="card-action">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="N2ZJ8FW8ZWMZL">
-              <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-              <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-            </form>
+            <!-- paypal donation button-->
           </div>
         </div>
       </div>

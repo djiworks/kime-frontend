@@ -9,7 +9,7 @@ Template.intro.onRendered(function () {
 });
 
 
-Template.menu.onRendered(function () {
+Template.menuGlobal.onRendered(function () {
   this.$(".button-collapse").sideNav({
     closeOnClick: true
   });
