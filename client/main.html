@@ -9,17 +9,18 @@
     <title>Kime - Gérer vos dépenses carburant</title>
 </head>
 
-<body>
+<template name="mainLayout">
   {{>cguInfo}}
   {{#if currentUser}}
     {{> menuUser}}
+    {{> Template.dynamic template=content}}
   {{else}}
     {{> menuGlobal}}
     {{> userLogin}}
     {{> intro}}
   {{/if}}
   {{> footer}}
-</body>
+</template>
 
 <template name="menuGlobal">
   <div class="navbar">
