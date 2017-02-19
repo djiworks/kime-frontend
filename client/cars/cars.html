@@ -1,0 +1,62 @@
+<template name="userCars">
+  <div class="container">
+    <h2>Mes voitures</h2>
+    <div class="row">
+      {{#each cars}}
+        <div class="col s12 m6 l3">
+          {{> userCar}}
+        </div>
+      {{/each}}
+      <div class="col s12 m6 l3">
+        {{> userNewCar}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="userNewCar">
+  <div class="card small card-new-car">
+    <div class="card-image center card-car-padding-top">
+      <i class="fa fa-car fa-4x"></i>
+    </div>
+    <div class="card-content center">
+      <a class="btn-floating btn-large waves-effect waves-light red add-car-button">+</a>
+      <br/>
+      Ajouter un nouveau véhicule
+    </div>
+  </div>
+</template>
+
+<template name="userCar">
+  <div class="card small sticky-action card-car">
+    <div class="card-image waves-effect waves-block waves-light">
+      {{> carImg}}
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">
+        {{name}}
+        <i class="fa fa-ellipsis-v right"></i>
+      </span>
+      <p>
+        <span class="bold">Type de moteur :</span>{{motor_type}}<br>
+        <span class="bold">Kilométrage de départ :</span>{{start_mileage}}
+      </p>
+    </div>
+    <div class="card-action">
+      <a href="#"><i class="fa fa-edit right"></i></a>
+      <a href="#"><i class="fa fa-trash right"></i></a>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="fa fa-close right"></i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+</template>
+
+<template name="carImg">
+  <div class="background-image">
+    <div class="valign-wrapper">
+      <i class="fa fa-car"></i>
+    </div>
+  </div>
+</template>
