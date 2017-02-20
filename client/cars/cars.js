@@ -23,3 +23,10 @@ Template.userCar.helpers({
     }
   }
 });
+
+Template.userCar.events({
+  'click [data-action="delete"]'(event) {
+    event.preventDefault();
+    Cars.remove(this._id)
+  }
+});

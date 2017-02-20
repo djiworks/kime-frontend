@@ -14,7 +14,7 @@ Template.userLogin.events({
           console.error(err);
         }
         else {
-          self.$('#userLogin').modal('close');
+          Template.instance().$('#userLogin').modal('close');
         }
     });
   }
