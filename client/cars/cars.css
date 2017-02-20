@@ -6,7 +6,10 @@
   margin: 5px;
   text-align: center;
   height: 120px;
-  width: 225px;
+}
+
+.background-image .valign-wrapper {
+  justify-content: center;
 }
 
 .background-image i {
@@ -26,4 +29,8 @@
 
 .card-car-padding-top {
   padding-top: 15%;
+}
+
+.reduced-fonts {
+  font-size: 12px;
 }
