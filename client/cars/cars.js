@@ -1,6 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { Cars } from '../../imports/api/cars.js';
 
+Template.userCars.onCreated(function () {
+  this.subscribe('cars');
+});
+
 Template.userCars.helpers({
   count() {
     return Cars.find({}).count();

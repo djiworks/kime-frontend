@@ -27,6 +27,18 @@ Meteor.methods({
 
   'cars.remove'(carId) {
     check(carId, String);
+
+    const car = Cars.findOne(carId);
+    if (car.ownerId !== this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
     Cars.remove(carId);
   }
 });
+
+
+if (Meteor.isServer) {
+  Meteor.publish('cars', function carsPublication() {
+    return Cars.find({ownerId: this.userId});
+  });
+}
