@@ -1,3 +1,5 @@
+import { Accounts } from 'meteor/accounts-base';
+
 Template.userRegister.onRendered(function () {
   this.$('.modal').modal();
 });

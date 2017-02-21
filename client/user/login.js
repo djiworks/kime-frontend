@@ -1,3 +1,5 @@
+import { Meteor } from 'meteor/meteor';
+
 Template.userLogin.onRendered(function () {
   this.$('.modal').modal();
 });
@@ -5,6 +7,7 @@ Template.userLogin.onRendered(function () {
 Template.userLogin.events({
   'submit form': function(event) {
     event.preventDefault();
+    self =Template.instance();
     Meteor.loginWithPassword(
       event.target.username.value,
       event.target.password.value,
@@ -14,7 +17,7 @@ Template.userLogin.events({
           console.error(err);
         }
         else {
-          Template.instance().$('#userLogin').modal('close');
+          self.$('#userLogin').modal('close');
         }
     });
   }
