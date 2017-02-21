@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Cars } from '../../imports/api/cars.js';
 
 Template.editCar.onRendered(function () {
@@ -9,12 +10,10 @@ Template.editCar.onRendered(function () {
 Template.editCar.events({
   'submit form': function(event) {
     event.preventDefault();
-    Cars.insert({
-      name: event.target.carName.value,
-      motor_type: parseInt(event.target.carMotor.value, 10),
-      start_mileage: parseInt(event.target.carMileage.value, 10),
-      ownerId: Meteor.userId()
-    });
+    Meteor.call('cars.insert', event.target.carName.value
+    , parseInt(event.target.carMotor.value, 10)
+    , parseInt(event.target.carMileage.value, 10));
+
     var tpl = Template.instance()
     tpl.$('form').trigger("reset");
     tpl.$('#editCar').modal('close');

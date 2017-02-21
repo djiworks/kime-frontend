@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Cars } from '../../imports/api/cars.js';
 
 Template.userCars.helpers({
@@ -27,6 +28,6 @@ Template.userCar.helpers({
 Template.userCar.events({
   'click [data-action="delete"]'(event) {
     event.preventDefault();
-    Cars.remove(this._id)
+    Meteor.call('cars.remove', this._id);
   }
 });
