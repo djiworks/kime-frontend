@@ -24,3 +24,5 @@ materialize:materialize
 fortawesome:fontawesome
 kadira:flow-router
 kadira:blaze-layout
+momentjs:moment
+dburles:mongo-collection-instances

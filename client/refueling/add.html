@@ -1,0 +1,63 @@
+<template name="editRefueling">
+  <div id="editRefueling" class="modal refuel-car-modal">
+    <div class="modal-content">
+      <h4>Nouveau Plein</h4>
+      <form>
+        <div class="container">
+          <div class="row">
+            <div class="input-field s12 m4 l8">
+              <label for="refuelingDate">Date</label>
+              <input id="refuelingDate" type="text" class="datepicker"
+              data-value="{{today}}" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field s12 m4 l8">
+              <input id="refuelingTotal" type="number" class="validate"
+              required min="0">
+              <label for="refuelingTotal">Montant total (en €)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field s12 m4 l8">
+              <input id="refuelingPrice" type="number" class="validate" required
+              min="0" step=0.01 value="1">
+              <label for="refuelingPrice">Prix du L (en €)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field s12 m4 l8">
+              <input id="refuelingMileage" type="number" class="validate" required
+              min="0">
+              <label for="refuelingMileage">Kilométrage au compteur (en km)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field s12 m4 l8">
+              <div class="switch">
+                <label>
+                  Plein
+                  <input type="checkbox" id="refuelingPartial">
+                  <span class="lever"></span>
+                  Partiel
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row">
+            <div class="input-field s12 m4 l8">
+              <textarea id="refuelingComment" class="materialize-textarea"></textarea>
+              <label for="refuelingComment">Commentaire</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s6 offset-s6">
+              <input class="btn waves-effect waves-light right" type="submit" name="action" value="Ajouter">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>

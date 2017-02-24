@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Cars } from '../../imports/api/cars.js';
 
 Template.editCar.onRendered(function () {
   this.$('.modal').modal();

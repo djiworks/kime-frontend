@@ -38,6 +38,7 @@
 
 <template name="userCar">
   <div class="card small sticky-action card-car">
+    {{> editRefueling car=_id}}
     <div class="card-image waves-effect waves-block waves-light">
       {{> carImg}}
     </div>
@@ -53,6 +54,7 @@
     </div>
     <div class="card-action">
       <a data-action="delete" href="#"><i class="fa fa-trash right"></i></a>
+      <a href="#editRefueling">Ajouter plein</a>
       <!-- <a href="#"><i class="fa fa-edit right"></i></a> -->
     </div>
     <div class="card-reveal">
