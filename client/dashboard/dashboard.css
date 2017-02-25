@@ -1,0 +1,13 @@
+.unit {
+  font-size: 0.5em;
+}
+
+.progress-dashboard {
+  padding: 5px;
+  margin-bottom: 2px;
+  margin-top: 3px;
+}
+
+.progress-title {
+  font-size: 12px;
+}

@@ -3,6 +3,8 @@ import { Template } from 'meteor/templating';
 import './main.html';
 import '../imports/startup/accounts-config.js';
 
+moment.locale('fr');
+
 Template.intro.onRendered(function () {
   this.$('.parallax').parallax();
   this.$('.scrollspy').scrollSpy();

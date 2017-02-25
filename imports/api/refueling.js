@@ -66,8 +66,8 @@ Meteor.methods({
 });
 
 
-/*if (Meteor.isServer) {
-  Meteor.publish('cars', function carsPublication() {
-    return Cars.find({ownerId: this.userId});
+if (Meteor.isServer) {
+  Meteor.publish('refueling', function refuelingPublication() {
+    return Refueling.find({ownerId: this.userId});
   });
-}*/
+}

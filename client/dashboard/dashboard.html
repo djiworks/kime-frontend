@@ -1,0 +1,131 @@
+<template name="dashboard">
+  <div class="containers center full-height">
+    <p class="bold grey-text text-lighten-1">
+      Du {{startDate}} au {{endDate}}
+    </p>
+    {{#with dataDashboard}}
+      <div class="row">
+        {{> dashboardItem
+          title="Dépense carburant"
+          number=sumTotal
+          unit="€"
+          icon="fa-euro"
+        }}
+        {{> dashboardItem
+          title="Coût par km"
+          number=costUnit
+          unit="€"
+          icon="fa-automobile"
+        }}
+        {{> dashboardItem
+          title="Consommation moyenne"
+          number=avgConso
+          unit="L/100km"
+          icon="fa-tint"
+        }}
+        {{> dashboardItem
+          title="Distance moyenne"
+          number=avgDistance
+          unit="km"
+          icon="fa-road"
+        }}
+        {{> dashboardItem
+          title="Montant moyen d'un plein"
+          number=avgTotal
+          unit="€"
+          icon="fa-credit-card"
+        }}
+        {{> dashboardItem
+          title="Carburant consommé (mois courant)"
+          number=sumVolume
+          unit="L"
+          icon="fa-thermometer-three-quarters"
+        }}
+        {{> dashboardItem
+          title="Distance parcourue (mois courant)"
+          number=sumDistance
+          unit="km"
+          icon="fa-map-signs"
+        }}
+        <div class="col s12 m6 l3">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <span class="black-text thin italic">
+              Données Kime
+            </span>
+            <div class="row valign-wrapper">
+              <div class="col s2 brown-text">
+                <i class="fa fa-user fa-4x" aria-hidden="true"></i>
+              </div>
+              <div class="col s10">
+                <span class="progress-title">Nombre de voitures</span>
+                <div class="progress progress-dashboard">
+                  <div class="determinate" style="width: {{carsCount}}%"></div>
+                </div>
+                <span class="progress-title">Nombre de pleins enregistrés</span>
+                <div class="progress progress-dashboard">
+                  <div class="determinate" style="width: {{refuelingCount}}%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l3">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <span class="black-text thin italic">
+              Voitures
+            </span>
+            <div class="row valign-wrapper">
+              <div class="col s2 brown-text">
+                <i class="fa fa-automobile fa-4x" aria-hidden="true"></i>
+              </div>
+              <div class="col s10">
+                <a href="/cars">Accèder aux voitures</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l3">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <span class="black-text thin italic">
+              Analyse
+            </span>
+            <div class="row valign-wrapper">
+              <div class="col s2 brown-text">
+                <i class="fa fa-bar-chart fa-4x" aria-hidden="true"></i>
+              </div>
+              <div class="col s10">
+                <a href="">Accèder aux statistiques</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{else}}
+      <h1 class="brown-text"><i class="fa fa-tachometer fa-3x"></i></h1>
+      <h4>Dashboard</h4>
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      <span class="sr-only">Chargement des données...</span>
+      <p>
+        Chargement des données...
+      </p>
+    {{/with}}
+  </div>
+</template>
+
+<template name="dashboardItem">
+  <div class="col s12 m6 l3">
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <span class="black-text thin italic">
+        {{title}}
+      </span>
+      <div class="row valign-wrapper">
+        <div class="col s2 brown-text">
+          <i class="fa {{icon}} fa-4x" aria-hidden="true"></i>
+        </div>
+        <div class="col s10">
+          <h4>{{number}} <span class="unit">{{unit}}</span></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
