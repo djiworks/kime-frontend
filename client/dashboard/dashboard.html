@@ -1,7 +1,8 @@
 <template name="dashboard">
   <div class="containers center full-height">
     <p class="bold grey-text text-lighten-1">
-      Du {{startDate}} au {{endDate}}
+      Du {{startDate}} au {{endDate}}<br/>
+      <span class="light italic">Les pleins partielles ne sont pas pris en compte</span>
     </p>
     {{#with dataDashboard}}
       <div class="row">
@@ -103,11 +104,16 @@
     {{else}}
       <h1 class="brown-text"><i class="fa fa-tachometer fa-3x"></i></h1>
       <h4>Dashboard</h4>
-      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-      <span class="sr-only">Chargement des données...</span>
-      <p>
-        Chargement des données...
-      </p>
+      {{#unless refuelingCount}}
+        pas de données.
+        <a href="/cars">Ajouter des véhicules</a>
+      {{else}}
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only">Chargement des données...</span>
+        <p>
+          Chargement des données...
+        </p>
+      {{/unless}}
     {{/with}}
   </div>
 </template>
@@ -123,7 +129,7 @@
           <i class="fa {{icon}} fa-4x" aria-hidden="true"></i>
         </div>
         <div class="col s10">
-          <h4>{{number}} <span class="unit">{{unit}}</span></h4>
+          <h4>{{numberFixed}} <span class="unit">{{unit}}</span></h4>
         </div>
       </div>
     </div>

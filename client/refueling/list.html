@@ -1,0 +1,69 @@
+<template name="refuelingList">
+  <div class="container full-height scrollable">
+    {{> editRefueling car=carId}}
+    <h2 class="brown-text thin">
+      <a href="/cars" class="brown-text">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </a>
+      Détails du véhicule
+    </h2>
+    <h5 class="medium">Liste des données pour {{carName}}</h5>
+    <a  href="#editRefueling" class="waves-effect waves-light btn">
+      + Ajouter
+    </a>
+    <table class="highlight centered responsive-table">
+      <thead>
+        <tr>
+          <!--   date: rDate,
+            total: total,
+            price: price,
+            comment: comment,
+            partial: partial,
+            carId: carId,
+            ownerId: this.userId,
+            new_mileage: mileage,
+            old_mileage: oldMileage,
+
+            //Computed values
+            volume: volume,
+            distance: distance,
+            consumption: consumption
+          -->
+            <th data-field="date">Date</th>
+            <th data-field="total">Montant (€)</th>
+            <th data-field="price">Prix (€)</th>
+            <th data-field="mileage">Kilométrage</th>
+            <th data-field="distance">Distance (km)</th>
+            <th data-field="volume">Volume (L)</th>
+            <th data-field="conso">Consommation (L/100km)</th>
+            <th data-field="partial">Plein</th>
+            <th data-field="comment">Commentaires</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each refueling}}
+          <tr>
+            <td>{{formatDate}}</td>
+            <td>{{total}}</td>
+            <td>{{price}}</td>
+            <td>{{new_mileage}}</td>
+            <td>{{distance}}</td>
+            <td>{{volume}}</td>
+            <td>{{consumption}}</td>
+            <td>
+              {{#if partial}}
+                Non
+              {{else}}
+                Oui
+              {{/if}}
+            </td>
+            <td>{{comment}}</td>
+          </tr>
+        {{else}}
+          Pas de données
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>

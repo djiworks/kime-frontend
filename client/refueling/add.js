@@ -46,8 +46,8 @@ Template.editRefueling.events({
     .toDate();
 
     Meteor.call('refueling.insert', this.car, refuelingDate
-    , parseInt(event.target.refuelingTotal.value, 10)
-    , parseInt(event.target.refuelingPrice.value, 10)
+    , parseFloat(event.target.refuelingTotal.value, 10)
+    , parseFloat(event.target.refuelingPrice.value, 10)
     , parseInt(event.target.refuelingMileage.value, 10)
     , event.target.refuelingPartial.checked
     , event.target.refuelingComment.value);

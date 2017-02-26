@@ -1,3 +1,9 @@
+FlowRouter.notFound = {
+    action: function() {
+      FlowRouter.go('/');
+    }
+};
+
 FlowRouter.route('/', {
   action: function() {
     BlazeLayout.render('mainLayout', {content: 'dashboard'});
@@ -15,7 +21,6 @@ FlowRouter.route('/profile', {
   }
 });
 
-
 FlowRouter.route('/cars', {
   triggersEnter: [function() {
     if (!Meteor.user()){
@@ -24,5 +29,16 @@ FlowRouter.route('/cars', {
   }],
   action: function() {
     BlazeLayout.render('mainLayout', {content: "userCars"});
+  }
+});
+
+FlowRouter.route('/refueling/:cardId', {
+  triggersEnter: [function() {
+    if (!Meteor.user()){
+      FlowRouter.go('/');
+    }
+  }],
+  action: function() {
+    BlazeLayout.render('mainLayout', {content: "refuelingList"});
   }
 });

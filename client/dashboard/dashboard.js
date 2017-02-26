@@ -34,3 +34,19 @@ Template.dashboard.helpers({
     return (Refueling.find({}).count() * 100 / 10);
   }
 });
+
+
+function isInt(n) {
+   return n % 1 === 0;
+}
+
+Template.dashboardItem.helpers({
+  numberFixed: function() {
+      if (isInt(this.number)) {
+        return this.number;
+      }
+      else {
+        return this.number.toFixed(2);
+      }
+  }
+});
