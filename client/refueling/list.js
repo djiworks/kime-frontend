@@ -14,7 +14,8 @@ Template.refuelingList.helpers({
   },
 
   refueling() {
-    return Refueling.find({},{sort: {date: -1}});
+    return Refueling.find({carId: FlowRouter.current().params['cardId']}
+    ,{sort: {date: -1}});
   },
 
   formatDate() {
