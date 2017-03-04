@@ -10,6 +10,21 @@ Template.dashboard.onCreated(function () {
   });
   this.subscribe('cars');
   this.subscribe('refueling');
+
+  //TODO REMOVE this
+  //'giwc4axhi2MkyScLe'
+  //Meteor.call('stats.getCommonData', null, null,  null);
+  //Meteor.call('stats.getCommonData', 'giwc4axhi2MkyScLe', null, 2017, function(err, data) {
+  //  console.log(data);
+  //});
+  //Meteor.call('stats.getCommonData', null, 2, null);
+  //Meteor.call('stats.getCommonData', null, null, 2017);
+
+  //Meteor.call('stats.getCommonData', carid, 2, null);
+  //Meteor.call('stats.getCommonData', carid, null, 2017);
+
+  //Meteor.call('stats.getCommonData', null, 2, 2017);
+  //Meteor.call('stats.getCommonData', carid, 2, 2017);
 });
 
 

@@ -27,3 +27,4 @@ kadira:blaze-layout
 momentjs:moment
 dburles:mongo-collection-instances
 meteorhacks:aggregate
+chart:chart

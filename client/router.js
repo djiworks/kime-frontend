@@ -42,3 +42,14 @@ FlowRouter.route('/refueling/:cardId', {
     BlazeLayout.render('mainLayout', {content: "refuelingList"});
   }
 });
+
+FlowRouter.route('/stats', {
+  triggersEnter: [function() {
+    if (!Meteor.user()){
+      FlowRouter.go('/');
+    }
+  }],
+  action: function() {
+    BlazeLayout.render('mainLayout', {content: "statsMainView"});
+  }
+});
