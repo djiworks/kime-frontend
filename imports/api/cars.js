@@ -32,6 +32,7 @@ Meteor.methods({
     if (car.ownerId !== this.userId) {
       throw new Meteor.Error('not-authorized');
     }
+    Meteor.call('refueling.removeByCar', carId);
     Cars.remove(carId);
   }
 });

@@ -10,6 +10,21 @@ function toFixed(value) {
 
 if (Meteor.isServer) {
   Meteor.methods({
+    'refueling.removeByCar'(carId) {
+      check(carId, String);
+
+      const car = Cars.findOne(carId)
+      if (! car) {
+        throw new Meteor.Error('refueling_car-not-found');
+      }
+
+      if (car.ownerId !== this.userId) {
+        throw new Meteor.Error('not-authorized');
+      }
+
+      Refueling.remove({carId: carId});
+    },
+
     'refueling.insert'(carId, rDate, total, price, mileage, partial, comment) {
       if (! rDate instanceof Date) {
         throw new Meteor.Error('wrong-date-arg');
