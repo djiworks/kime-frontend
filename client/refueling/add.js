@@ -1,8 +1,14 @@
 import { Meteor } from 'meteor/meteor';
 import { Refueling } from '../../imports/api/refueling.js';
 
+var curCar = null
 Template.editRefueling.onRendered(function () {
-  this.$('.modal').modal();
+  self = this;
+  this.$('.modal').modal({
+    ready: function(modal, trigger) {
+      curCar = trigger.data('value');
+    }
+  });
   this.$('.datepicker').pickadate({
     monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'
     , 'Août', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
@@ -45,7 +51,7 @@ Template.editRefueling.events({
     var refuelingDate = moment(event.target.refuelingDate.value, 'DD/MM/YYYY')
     .toDate();
 
-    Meteor.call('refueling.insert', this.car, refuelingDate
+    Meteor.call('refueling.insert', curCar, refuelingDate
     , parseFloat(event.target.refuelingTotal.value, 10)
     , parseFloat(event.target.refuelingPrice.value, 10)
     , parseInt(event.target.refuelingMileage.value, 10)

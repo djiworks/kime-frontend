@@ -1,6 +1,6 @@
 <template name="refuelingList">
   <div class="container full-height scrollable">
-    {{> editRefueling car=carId}}
+    {{> editRefueling}}
     <h2 class="brown-text thin">
       <a href="/cars" class="brown-text">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -8,7 +8,8 @@
       Détails du véhicule
     </h2>
     <h5 class="medium">Liste des données pour {{carName}}</h5>
-    <a  href="#editRefueling" class="waves-effect waves-light btn">
+    <a  href="#editRefueling" data-value="{{carId}}"
+    class="waves-effect waves-light btn">
       + Ajouter
     </a>
     <table class="highlight centered responsive-table">
