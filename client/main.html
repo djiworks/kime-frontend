@@ -12,11 +12,11 @@
   {{>cguInfo}}
   {{#if currentUser}}
     {{> menuUser}}
-    {{> Template.dynamic template=content}}
+    {{> Template.dynamic template=userContent}}
   {{else}}
     {{> menuGlobal}}
     {{> userLogin}}
-    {{> intro}}
+    {{> Template.dynamic template=publicContent}}
   {{/if}}
   {{> footer}}
 </template>
@@ -25,19 +25,19 @@
   <div class="navbar">
     <nav>
       <div class="nav-wrapper cyan darken-1">
-        <a href="#" class="brand-logo">Kime</a>
+        <a href="/" class="brand-logo">Kime</a>
         <ul id="slide-out" class="side-nav">
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#features">Fonctionnalités</a></li>
-          <li><a href="#project">Contribuer</a></li>
+          <li><a href="/#home">Accueil</a></li>
+          <li><a href="/#features">Fonctionnalités</a></li>
+          <li><a href="/#project">Contribuer</a></li>
           <li><a class="waves-effect waves-light btn" href="#userLogin">Connexion</a></li>
 
         </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars fa-2x"></i></a>
+        <a href="/" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars fa-2x"></i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#features">Fonctionnalités</a></li>
-          <li><a href="#project">Contribuer</a></li>
+          <li><a href="/#home">Accueil</a></li>
+          <li><a href="/#features">Fonctionnalités</a></li>
+          <li><a href="/#project">Contribuer</a></li>
           <li><a class="waves-effect waves-light btn" href="#userLogin">Connexion</a></li>
         </ul>
       </div>
@@ -193,7 +193,7 @@
           <h5 class="white-text">Informations légales</h5>
           <ul>
             <li><a class="grey-text text-lighten-3" href="#cguInfo">Conditions générales d'utilisation</a></li>
-            <li><a class="grey-text text-lighten-3" href="#legalInfo">Mentions légales</a></li>
+            <li><a class="grey-text text-lighten-3" href="/legal">Mentions légales</a></li>
           </ul>
         </div>
       </div>
@@ -203,6 +203,5 @@
       © 2017 Copyright
       </div>
     </div>
-    {{>legalInfo}}
   </footer>
 </template>

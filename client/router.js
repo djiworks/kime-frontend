@@ -6,7 +6,8 @@ FlowRouter.notFound = {
 
 FlowRouter.route('/', {
   action: function() {
-    BlazeLayout.render('mainLayout', {content: 'dashboard'});
+    BlazeLayout.render('mainLayout'
+    , {userContent: 'dashboard', publicContent: 'intro'});
   }
 });
 
@@ -17,7 +18,14 @@ FlowRouter.route('/profile', {
     }
   }],
   action: function() {
-    BlazeLayout.render('mainLayout', {content: "userProfile"});
+    BlazeLayout.render('mainLayout', {userContent: "userProfile"});
+  }
+});
+
+FlowRouter.route('/legal', {
+  action: function() {
+    BlazeLayout.render('mainLayout'
+    , {userContent: "legalContent", publicContent: "legalContent"});
   }
 });
 
