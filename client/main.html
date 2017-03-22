@@ -12,12 +12,11 @@
   {{>cguInfo}}
   {{#if currentUser}}
     {{> menuUser}}
-    {{> Template.dynamic template=content}}
   {{else}}
     {{> menuGlobal}}
     {{> userLogin}}
-    {{> intro}}
   {{/if}}
+  {{> Template.dynamic template=content}}
   {{> footer}}
 </template>
 
@@ -193,7 +192,7 @@
           <h5 class="white-text">Informations légales</h5>
           <ul>
             <li><a class="grey-text text-lighten-3" href="#cguInfo">Conditions générales d'utilisation</a></li>
-            <li><a class="grey-text text-lighten-3" href="#legalInfo">Mentions légales</a></li>
+            <li><a class="grey-text text-lighten-3" href="/legal">Mentions légales</a></li>
           </ul>
         </div>
       </div>
@@ -203,6 +202,5 @@
       © 2017 Copyright
       </div>
     </div>
-    {{>legalInfo}}
   </footer>
 </template>

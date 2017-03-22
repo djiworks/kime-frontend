@@ -4,15 +4,47 @@ FlowRouter.notFound = {
     }
 };
 
+Accounts.onLogin(function(){
+  FlowRouter.go('/dashboard');
+});
+
+Accounts.onLogout(function(){
+  FlowRouter.go('/');
+});
+
 FlowRouter.route('/', {
+  triggersEnter: [function() {
+    console.log('oo');
+    if (Meteor.userId()){
+      console.log('oii');
+      FlowRouter.go('/dashboard');
+    }
+  }],
+  action: function() {
+    BlazeLayout.render('mainLayout', {content: 'intro'});
+  }
+});
+
+FlowRouter.route('/dashboard', {
+  triggersEnter: [function() {
+    if (!Meteor.userId()){
+      FlowRouter.go('/');
+    }
+  }],
   action: function() {
     BlazeLayout.render('mainLayout', {content: 'dashboard'});
   }
 });
 
+FlowRouter.route('/legal', {
+  action: function() {
+    BlazeLayout.render('mainLayout', {content: 'legalInfo'});
+  }
+});
+
 FlowRouter.route('/profile', {
   triggersEnter: [function() {
-    if (!Meteor.user()){
+    if (!Meteor.userId()){
       FlowRouter.go('/');
     }
   }],
@@ -23,7 +55,7 @@ FlowRouter.route('/profile', {
 
 FlowRouter.route('/cars', {
   triggersEnter: [function() {
-    if (!Meteor.user()){
+    if (!Meteor.userId()){
       FlowRouter.go('/');
     }
   }],
@@ -34,7 +66,7 @@ FlowRouter.route('/cars', {
 
 FlowRouter.route('/refueling/:cardId', {
   triggersEnter: [function() {
-    if (!Meteor.user()){
+    if (!Meteor.userId()){
       FlowRouter.go('/');
     }
   }],
@@ -45,7 +77,7 @@ FlowRouter.route('/refueling/:cardId', {
 
 FlowRouter.route('/stats', {
   triggersEnter: [function() {
-    if (!Meteor.user()){
+    if (!Meteor.userId()){
       FlowRouter.go('/');
     }
   }],
